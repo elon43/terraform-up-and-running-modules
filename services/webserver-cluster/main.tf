@@ -58,12 +58,12 @@ resource "aws_autoscaling_group" "example" {
 
   instance_refresh {
     strategy = "Rolling"
-  }
 
-  preferences {
-    min_healthy_percentage = 50
+    preferences {
+      min_healthy_percentage = 50
+    }
   }
-
+  
   tag {
     key                 = "Name"
     value               = "${var.cluster_name}-example"
